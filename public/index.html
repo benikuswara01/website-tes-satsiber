@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satsiber TNI - Satuan Siber Tentara Nasional Indonesia</title>
+    <title>Satsiber BENI - Satuan Siber Tentara Nasional Indonesia</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome CDN for Icons -->
@@ -11,8 +12,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
@@ -50,7 +53,7 @@
         /* Cyber Grid Background */
         .cyber-grid {
             background-size: 40px 40px;
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(31, 41, 55, 0.3) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(31, 41, 55, 0.3) 1px, transparent 1px);
         }
@@ -59,6 +62,7 @@
         .glow-border {
             position: relative;
         }
+
         .glow-border::after {
             content: '';
             position: absolute;
@@ -69,20 +73,28 @@
             opacity: 0.3;
             transition: opacity 0.3s ease;
         }
+
         .glow-border:hover::after {
             opacity: 0.8;
         }
 
         /* Radar Scanner Effect */
         @keyframes scan {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(1000%); }
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(1000%);
+            }
         }
+
         .scan-line {
             animation: scan 8s linear infinite;
         }
     </style>
 </head>
+
 <body class="cyber-grid min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-black">
 
     <!-- Navigation Bar -->
@@ -91,12 +103,15 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo & Title -->
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-mono font-bold text-xl shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                    <div
+                        class="w-10 h-10 rounded-lg bg-emerald-950/80 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-mono font-bold text-xl shadow-[0_0_15px_rgba(16,185,129,0.3)]">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <div>
-                        <span class="text-xl font-extrabold tracking-wider text-white block leading-none">SATSIBER <span class="text-emerald-400">TNI</span></span>
-                        <span class="text-[10px] text-gray-400 tracking-widest font-mono uppercase">Satuan Siber TNI</span>
+                        <span class="text-xl font-extrabold tracking-wider text-white block leading-none">SATSIBER <span
+                                class="text-emerald-400">TNI</span></span>
+                        <span class="text-[10px] text-gray-400 tracking-widest font-mono uppercase">Satuan Siber
+                            TNI</span>
                     </div>
                 </div>
 
@@ -106,14 +121,16 @@
                     <a href="#tentang" class="text-gray-300 hover:text-emerald-400 transition-colors">/Tentang</a>
                     <a href="#visimisi" class="text-gray-300 hover:text-emerald-400 transition-colors">/Visi_Misi</a>
                     <a href="#tugas" class="text-gray-300 hover:text-emerald-400 transition-colors">/Fungsi</a>
-                    <a href="#kontak" class="px-4 py-2 rounded-md bg-emerald-500/10 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all font-semibold">
+                    <a href="#kontak"
+                        class="px-4 py-2 rounded-md bg-emerald-500/10 border border-emerald-500/50 text-emerald-400 hover:bg-emerald-500 hover:text-black transition-all font-semibold">
                         Sistem Portal
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none"
+                        aria-label="Toggle Menu">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -121,23 +138,29 @@
         </div>
 
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0a0f1d] border-b border-gray-800 px-4 pt-2 pb-6 space-y-3 font-mono text-sm">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-[#0a0f1d] border-b border-gray-800 px-4 pt-2 pb-6 space-y-3 font-mono text-sm">
             <a href="#beranda" class="block text-gray-300 hover:text-emerald-400 py-2">/Beranda</a>
             <a href="#tentang" class="block text-gray-300 hover:text-emerald-400 py-2">/Tentang</a>
             <a href="#visimisi" class="block text-gray-300 hover:text-emerald-400 py-2">/Visi_Misi</a>
             <a href="#tugas" class="block text-gray-300 hover:text-emerald-400 py-2">/Fungsi</a>
-            <a href="#kontak" class="block text-center mt-4 px-4 py-2 rounded-md bg-emerald-500 text-black font-semibold">Sistem Portal</a>
+            <a href="#kontak"
+                class="block text-center mt-4 px-4 py-2 rounded-md bg-emerald-500 text-black font-semibold">Sistem
+                Portal</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="beranda" class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
         <!-- Glowing background gradient -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none">
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <!-- Badge Status -->
-            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 font-mono text-xs mb-8">
+            <div
+                class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 font-mono text-xs mb-8">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                 <span>Sistem Pertahanan Cyber Nasional • Status: AKTIF</span>
             </div>
@@ -152,16 +175,19 @@
 
             <!-- Motto & Description -->
             <p class="max-w-3xl mx-auto text-gray-400 text-lg sm:text-xl font-light mb-10 leading-relaxed">
-                Satuan Siber TNI bertugas menyelenggarakan operasi siber, pengamanan siber pertahanan, serta membina kesiapsiagaan siber nasional guna mendukung tugas pokok Tentara Nasional Indonesia.
+                Satuan Siber TNI bertugas menyelenggarakan operasi siber, pengamanan siber pertahanan, serta membina
+                kesiapsiagaan siber nasional guna mendukung tugas pokok Tentara Nasional Indonesia.
             </p>
 
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#tentang" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold font-mono transition-all duration-200 shadow-[0_0_20px_rgba(16,185,129,0.4)] flex items-center justify-center space-x-2">
+                <a href="#tentang"
+                    class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-black font-bold font-mono transition-all duration-200 shadow-[0_0_20px_rgba(16,185,129,0.4)] flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-terminal"></i>
                     <span>Eksplorasi Profil</span>
                 </a>
-                <a href="#visimisi" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-gray-900/80 hover:bg-gray-800 border border-gray-700 text-gray-200 font-medium font-mono transition-all duration-200 flex items-center justify-center space-x-2">
+                <a href="#visimisi"
+                    class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-gray-900/80 hover:bg-gray-800 border border-gray-700 text-gray-200 font-medium font-mono transition-all duration-200 flex items-center justify-center space-x-2">
                     <i class="fa-solid fa-compass"></i>
                     <span>Visi & Misi</span>
                 </a>
